@@ -23,6 +23,31 @@
             <artifactId>JPlaceHolder</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>TimingFramework</groupId>
+            <artifactId>TimingFramework</artifactId>
+            <version>0.55</version>
+        </dependency>
+        <dependency>
+            <groupId>NefAnimacion</groupId>
+            <artifactId>NefAnimacion</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>filters</groupId>
+            <artifactId>filters</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>swing-worker</groupId>
+            <artifactId>swing-worker</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>swingx</groupId>
+            <artifactId>swingx</artifactId>
+            <version>1.6.1</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
