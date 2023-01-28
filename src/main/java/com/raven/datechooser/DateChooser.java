@@ -16,8 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public final class DateChooser extends javax.swing.JPanel {
-    
-    
+
     public JTextField getTextRefernce() {
         return textRefernce;
     }
@@ -27,7 +26,7 @@ public final class DateChooser extends javax.swing.JPanel {
     }
 
     private JTextField textRefernce;
-    private final String MONTH_ENGLISH[] = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+    private final String MONTH_ENGLISH[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     private String dateFormat = "dd-MM-yyyy";
     private int MONTH = 1;
     private int YEAR = 2021;
@@ -243,7 +242,7 @@ public final class DateChooser extends javax.swing.JPanel {
         header.setMaximumSize(new java.awt.Dimension(262, 40));
 
         cmdForward.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cmdForward.setIcon(new ImageIcon("src/main/java/img/forward.png"));
+        cmdForward.setIcon(new ImageIcon("src/main/java/com/raven/datechooser/fordward.png"));
         cmdForward.setFocusable(true);
         cmdForward.setPaintBackground(false);
         cmdForward.addActionListener(new java.awt.event.ActionListener() {
@@ -288,7 +287,7 @@ public final class DateChooser extends javax.swing.JPanel {
         MY.add(cmdYear);
 
         cmdPrevious.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cmdPrevious.setIcon(new ImageIcon("src/main/java/img/previous.png"));
+        cmdPrevious.setIcon(new ImageIcon("src/main/java/com/raven/datechooser/previous.png"));
         cmdPrevious.setFocusable(true);
         cmdPrevious.setPaintBackground(false);
         cmdPrevious.addActionListener(new java.awt.event.ActionListener() {
@@ -308,11 +307,11 @@ public final class DateChooser extends javax.swing.JPanel {
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cmdPrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmdPrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MY)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmdForward, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmdForward, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         headerLayout.setVerticalGroup(
