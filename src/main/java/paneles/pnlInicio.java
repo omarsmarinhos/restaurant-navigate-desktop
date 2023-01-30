@@ -4,6 +4,7 @@
  */
 package paneles;
 
+import com.raven.chart.ModelChart;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import panelGradient.ModelColor;
@@ -21,6 +22,31 @@ public class pnlInicio extends javax.swing.JPanel {
      */
     public pnlInicio() {
         initComponents();
+        
+        chart.addLegend("Desayuno", new Color(12, 84, 175), new Color(0, 108, 247));
+        chart.addLegend("Almuerzo", new Color(54, 4, 143), new Color(104, 49, 200));
+        chart.addLegend("Cena", new Color(5, 125, 0), new Color(95, 209, 69));
+        chart.addLegend("Bebidas", new Color(186, 37, 37), new Color(241, 100, 120));
+        chart.addData(new ModelChart("Enero", new double[]{500, 200, 80, 89}));
+        chart.addData(new ModelChart("Febrero", new double[]{600, 750, 90, 150}));
+        chart.addData(new ModelChart("Marzo", new double[]{200, 350, 460, 900}));
+        chart.addData(new ModelChart("Abril", new double[]{480, 150, 750, 700}));
+        chart.addData(new ModelChart("Mayo", new double[]{350, 540, 300, 150}));
+        chart.addData(new ModelChart("Junio", new double[]{190, 280, 81, 200}));
+        
+        chart.start();
+        lineChart.addLegend("Income", new Color(12, 84, 175), new Color(0, 108, 247));
+        lineChart.addLegend("Expense", new Color(54, 4, 143), new Color(104, 49, 200));
+        lineChart.addLegend("Profit", new Color(5, 125, 0), new Color(95, 209, 69));
+        lineChart.addLegend("Cost", new Color(186, 37, 37), new Color(241, 100, 120));
+        lineChart.addData(new ModelChart("Enero", new double[]{500, 200, 80, 89}));
+        lineChart.addData(new ModelChart("Febrero", new double[]{600, 750, 90, 150}));
+        lineChart.addData(new ModelChart("Marzo", new double[]{200, 350, 460, 900}));
+        lineChart.addData(new ModelChart("Abril", new double[]{480, 150, 750, 700}));
+        lineChart.addData(new ModelChart("Mayo", new double[]{350, 540, 300, 150}));
+        lineChart.addData(new ModelChart("Junio", new double[]{190, 280, 81, 200}));
+        
+        lineChart.start();
         
         progress1.start();
         progress2.start();
@@ -77,6 +103,11 @@ public class pnlInicio extends javax.swing.JPanel {
         progress3 = new swingprogresscircle.Progress();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        lineChart = new com.raven.chart.LineChart();
+        jPanel8 = new javax.swing.JPanel();
+        chart = new com.raven.chart.Chart();
+        jLabel4 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1010, 548));
 
@@ -269,7 +300,6 @@ public class pnlInicio extends javax.swing.JPanel {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtDate1.setBackground(new java.awt.Color(255, 255, 255));
         txtDate1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtDate1.setForeground(new java.awt.Color(102, 102, 102));
         txtDate1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -295,7 +325,7 @@ public class pnlInicio extends javax.swing.JPanel {
                 .addComponent(dateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -394,18 +424,73 @@ public class pnlInicio extends javax.swing.JPanel {
 
         materialTabbed1.addTab("RESUMEN", jPanel1);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(lineChart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lineChart, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("Ingresos de Ordenes");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(chart, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chart, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 999, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 501, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 281, Short.MAX_VALUE))
         );
 
-        materialTabbed1.addTab("DEFAULT", jPanel2);
+        materialTabbed1.addTab("ESTADÍSTICAS", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -417,12 +502,15 @@ public class pnlInicio extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(materialTabbed1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(materialTabbed1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.raven.chart.Chart chart;
     private com.raven.datechooser.DateChooser dateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -435,15 +523,19 @@ public class pnlInicio extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private com.raven.chart.LineChart lineChart;
     private tabbed.MaterialTabbed materialTabbed1;
     private panelGradient.PanelGradient panelGradient;
     private panelGradient.PanelGradient panelGradient1;
