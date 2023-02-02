@@ -242,7 +242,7 @@ public final class DateChooser extends javax.swing.JPanel {
         header.setMaximumSize(new java.awt.Dimension(262, 40));
 
         cmdForward.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cmdForward.setIcon(new ImageIcon("src/main/java/com/raven/datechooser/fordward.png"));
+        cmdForward.setIcon(new ImageIcon("src/main/java/com/raven/datechooser/forward.png"));
         cmdForward.setFocusable(true);
         cmdForward.setPaintBackground(false);
         cmdForward.addActionListener(new java.awt.event.ActionListener() {

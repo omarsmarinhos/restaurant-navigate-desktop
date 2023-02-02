@@ -4,6 +4,13 @@
  */
 package paneles;
 
+import com.raven.datechooser.EventDateChooser;
+import com.raven.datechooser.SelectedAction;
+import com.raven.datechooser.SelectedDate;
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import panelGradient.ModelColor;
+
 /**
  *
  * @author MenDark
@@ -15,6 +22,20 @@ public class pnlCocina extends javax.swing.JPanel {
      */
     public pnlCocina() {
         initComponents();
+        
+        dateChooser1.addEventDateChooser(new EventDateChooser() {
+            @Override
+            public void dateSelected(SelectedAction action, SelectedDate date) {
+               // System.out.println(date.getDay() + "-" + date.getMonth() + "-" + date.getYear());
+                if (action.getAction() == SelectedAction.DAY_SELECTED) {
+                    dateChooser1.hidePopup();
+                }
+            }
+        });
+        
+         panelGradient1.addColor(new ModelColor(new Color(254, 143, 75), 0f), new ModelColor(new Color(249, 157, 25), 0.5f), new ModelColor(new Color(234, 154, 4), 1f));
+        
+        panelGradient2.addColor(new ModelColor(new Color(250, 56, 8), 0f), new ModelColor(new Color(252, 86, 45), 0.5f), new ModelColor(new Color(254, 123, 91), 1f));
     }
 
     /**
@@ -26,32 +47,243 @@ public class pnlCocina extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        dateChooser1 = new com.raven.datechooser.DateChooser();
+        materialTabbed1 = new tabbed.MaterialTabbed();
+        jPanel1 = new javax.swing.JPanel();
+        panelGradient1 = new panelGradient.PanelGradient();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        panelGradient2 = new panelGradient.PanelGradient();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        txt_buscar_orden = new textfield.TextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbl_ordenes = new javax.swing.JTable();
+        btn_ver_detalles = new javax.swing.JButton();
+        txtDate = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+
+        dateChooser1.setTextRefernce(txtDate);
 
         setPreferredSize(new java.awt.Dimension(1010, 548));
 
-        jLabel1.setText("Cocina");
+        materialTabbed1.setForeground(new java.awt.Color(102, 102, 102));
+        materialTabbed1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        panelGradient1.setPreferredSize(new java.awt.Dimension(208, 99));
+
+        jLabel6.setIcon(new ImageIcon("src/main/java/img/cocineros.png"));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("10");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Cocineros");
+
+        javax.swing.GroupLayout panelGradient1Layout = new javax.swing.GroupLayout(panelGradient1);
+        panelGradient1.setLayout(panelGradient1Layout);
+        panelGradient1Layout.setHorizontalGroup(
+            panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradient1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradient1Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
+        );
+        panelGradient1Layout.setVerticalGroup(
+            panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradient1Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(panelGradient1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelGradient1Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel12))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
+        );
+
+        panelGradient2.setPreferredSize(new java.awt.Dimension(208, 99));
+
+        jLabel7.setIcon(new ImageIcon("src/main/java/img/mesero.png"));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("10");
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Ordenes");
+
+        javax.swing.GroupLayout panelGradient2Layout = new javax.swing.GroupLayout(panelGradient2);
+        panelGradient2.setLayout(panelGradient2Layout);
+        panelGradient2Layout.setHorizontalGroup(
+            panelGradient2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGradient2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelGradient2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGradient2Layout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
+        );
+        panelGradient2Layout.setVerticalGroup(
+            panelGradient2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGradient2Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(panelGradient2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelGradient2Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel14))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
+        );
+
+        txt_buscar_orden.setLabelText("Buscar orden por estado, id, nombre");
+        txt_buscar_orden.setLineColor(new java.awt.Color(255, 131, 6));
+
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        tbl_ordenes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_ordenes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"3232", "21", "PAGADO", "Juan Alcantara", "S/89"},
+                {"2332", "23", "PENDIENTE", "Maria Mendoza", "S/150"},
+                {"7643", "30", "PENDIENTE", "Pedro Torres", "S/52"},
+                {null, "", null, null, null},
+                {null, "", null, null, null},
+                {null, "", null, null, null},
+                {null, "", null, null, null},
+                {null, "", null, null, null},
+                {null, "", null, null, null},
+                {null, "", null, null, null},
+                {null, "", null, null, null}
+            },
+            new String [] {
+                "ID", "Nº Orden", "Estado", "Cliente", "Precio Total"
+            }
+        ));
+        tbl_ordenes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tbl_ordenes.setGridColor(new java.awt.Color(255, 255, 255));
+        tbl_ordenes.setRowHeight(35);
+        tbl_ordenes.setSelectionBackground(new java.awt.Color(251, 154, 57));
+        jScrollPane2.setViewportView(tbl_ordenes);
+
+        btn_ver_detalles.setIcon(new ImageIcon("src/main/java/img/ver-deatlles.png"));
+        btn_ver_detalles.setBorderPainted(false);
+        btn_ver_detalles.setContentAreaFilled(false);
+        btn_ver_detalles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_ver_detalles.setFocusPainted(false);
+        btn_ver_detalles.setFocusable(false);
+
+        txtDate.setBackground(new java.awt.Color(255, 255, 255));
+        txtDate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtDate.setForeground(new java.awt.Color(255, 102, 0));
+        txtDate.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtDate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 154, 52)));
+        txtDate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtDate.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+
+        jLabel32.setBackground(new java.awt.Color(110, 116, 126));
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(110, 116, 126));
+        jLabel32.setText("Slecciona una fecha");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel32)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(panelGradient2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panelGradient1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDate)))
+                .addContainerGap(748, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(282, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txt_buscar_orden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE))
+                    .addGap(18, 18, 18)
+                    .addComponent(btn_ver_detalles, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(23, 23, 23)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(panelGradient1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(panelGradient2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel32)
+                .addGap(18, 18, 18)
+                .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(107, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(19, 19, 19)
+                    .addComponent(txt_buscar_orden, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(btn_ver_detalles, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(19, 19, 19)))
+        );
+
+        materialTabbed1.addTab("RESUMEN", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(349, 349, 349)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(417, Short.MAX_VALUE))
+            .addComponent(materialTabbed1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(353, Short.MAX_VALUE))
+            .addComponent(materialTabbed1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_ver_detalles;
+    private com.raven.datechooser.DateChooser dateChooser1;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private tabbed.MaterialTabbed materialTabbed1;
+    private panelGradient.PanelGradient panelGradient1;
+    private panelGradient.PanelGradient panelGradient2;
+    private javax.swing.JTable tbl_ordenes;
+    private javax.swing.JTextField txtDate;
+    private textfield.TextField txt_buscar_orden;
     // End of variables declaration//GEN-END:variables
 }

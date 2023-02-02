@@ -97,7 +97,7 @@
         <Component class="com.raven.datechooser.Button" name="cmdForward">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new ImageIcon(&quot;src/main/java/com/raven/datechooser/fordward.png&quot;)" type="code"/>
+              <Connection code="new ImageIcon(&quot;src/main/java/com/raven/datechooser/forward.png&quot;)" type="code"/>
             </Property>
             <Property name="focusable" type="boolean" value="true"/>
             <Property name="paintBackground" type="boolean" value="false"/>
