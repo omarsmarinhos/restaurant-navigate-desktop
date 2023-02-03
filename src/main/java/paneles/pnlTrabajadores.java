@@ -37,6 +37,7 @@ public class pnlTrabajadores extends javax.swing.JPanel {
         btn_agregar_trabajador = new javax.swing.JButton();
         btn_editar_trabajador = new javax.swing.JButton();
         btn_eliminar_trabajador = new javax.swing.JButton();
+        jLabel33 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1010, 548));
 
@@ -58,20 +59,20 @@ public class pnlTrabajadores extends javax.swing.JPanel {
         tbl_trabajadores.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         tbl_trabajadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, "Juan Carlos", "Campos Suarez", "juanc@gmail.com", "Mesero", "77756733"},
-                {null, "Merly Yuli", "Montes Torres", "merlyc@gmail.com", "Cocina", "56756433"},
-                {null, "Pedro Santiago", "Gonzales Carrera", "pedro@gmail.com", "Mesero", "35345654"},
-                {null, "", "", "", null, null},
-                {null, "", "", "", null, null},
-                {null, "", "", "", null, null},
-                {null, "", "", "", null, null},
-                {null, "", "", "", null, null},
-                {null, "", "", "", null, null},
-                {null, "", "", "", null, null},
-                {null, "", "", "", null, null}
+                {"2345", null, "Juan Carlos", "Campos Suarez", "juanc@gmail.com", "Mesero", "77756733"},
+                {"3444", null, "Merly Yuli", "Montes Torres", "merlyc@gmail.com", "Cocina", "56756433"},
+                {"6786", null, "Pedro Santiago", "Gonzales Carrera", "pedro@gmail.com", "Mesero", "35345654"},
+                {null, null, "", "", "", null, null},
+                {null, null, "", "", "", null, null},
+                {null, null, "", "", "", null, null},
+                {null, null, "", "", "", null, null},
+                {null, null, "", "", "", null, null},
+                {null, null, "", "", "", null, null},
+                {null, null, "", "", "", null, null},
+                {null, null, "", "", "", null, null}
             },
             new String [] {
-                "Imagen", "Nombres", "Apellidos", "Email", "Puesto", "DNI"
+                " ID", "Imagen", "Nombres", "Apellidos", "Email", "Puesto", "DNI"
             }
         ));
         tbl_trabajadores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -101,11 +102,16 @@ public class pnlTrabajadores extends javax.swing.JPanel {
         btn_eliminar_trabajador.setFocusPainted(false);
         btn_eliminar_trabajador.setFocusable(false);
 
+        jLabel33.setIcon(new ImageIcon("src/main/java/img/lupa-icon.png"));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 993, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(925, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(11, 11, 11)
@@ -127,7 +133,10 @@ public class pnlTrabajadores extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 489, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(423, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(2, 2, 2)
@@ -173,6 +182,7 @@ public class pnlTrabajadores extends javax.swing.JPanel {
     private javax.swing.JButton btn_editar_trabajador;
     private javax.swing.JButton btn_eliminar_trabajador;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private tabbed.MaterialTabbed materialTabbed1;
